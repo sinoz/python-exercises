@@ -17,7 +17,7 @@ for i in password_input:
          amt_digits += 1
 
 strength_lvl = (amt_symbols + amt_uppercased + amt_digits) / amt_factors
-if strength_lvl < 2:
+if strength_lvl < 2 or len(password_input) < 5:
     print "Weak"
 elif strength_lvl < 6:
     print "Medium"
