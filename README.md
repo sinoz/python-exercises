@@ -9,6 +9,8 @@ This is a collection of my personal college programming exercises for Python. Th
   * Converts the given degree in Fahrenheit to Celsius
 - Cryptography
   * A small practice with cryptography where a String input is broken down and each ASCII character value shifted by a specific amount.
+- Password Strength Check
+  * A simple program that checks the strength of a password given by the user.
 - StringReversal
   * A program that reverses the characters of a given String type value.
 - Rock Paper Scissors
