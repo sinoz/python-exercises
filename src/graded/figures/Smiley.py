@@ -1,1 +1,3 @@
-# TODO
+def smiley(amtRows):
+    # TODO
+    return
