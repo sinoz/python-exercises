@@ -23,3 +23,7 @@ This is a collection of my personal college programming exercises for Python. Th
   * Draws or prints a fixed square with hollow contents.
 - Rectangle Triangle
   * Draws or prints a rectangular triangle.
+- Isosceles Triangle
+  * Draws or prints an isosceles triangle.
+- Circle
+  * Draws or prints a circle using the Pythagoras formula.
