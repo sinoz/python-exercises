@@ -1,12 +1,12 @@
-def build_square(figure, amountRows):
+def build_square(figure, amount_rows):
     output = ""
-    for i in range(0, amountRows):
-        for j in range(0, amountRows):
+    for i in range(0, amount_rows):
+        for j in range(0, amount_rows):
             output += figure
         output += "\n"
     return output
 
 figure = raw_input("Insert figure")
-amount = int(raw_input("Insert amount rows"))
+amount_rows = int(raw_input("Insert amount rows"))
 
-print build_square(figure, amount)
+print build_square(figure, amount_rows)

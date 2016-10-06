@@ -1,8 +1,8 @@
-def build_rect_triangle(figure, amountRows):
+def build_rect_triangle(figure, amount_rows):
     output = ""
     previous = figure
 
-    for i in range(0, amountRows):
+    for i in range(0, amount_rows):
         output += previous
         previous += figure
 
@@ -11,6 +11,6 @@ def build_rect_triangle(figure, amountRows):
     return output
 
 figure = raw_input("Insert figure")
-amountRows = int(raw_input("Insert amount rows"))
+amount_rows = int(raw_input("Insert amount rows"))
 
-print build_rect_triangle(figure, amountRows)
+print build_rect_triangle(figure, amount_rows)

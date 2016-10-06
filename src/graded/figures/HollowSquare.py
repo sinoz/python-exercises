@@ -1,29 +1,29 @@
-def include_hollowness(figure, amountRows):
+def hollow(figure, amount_rows):
     output = figure
-    for i in range(1, amountRows):
+    for i in range(1, amount_rows):
         output += " "
     output += figure
     output += "\n"
 
     return output
 
-def include_border(figure, amountRows):
+def top_and_bottom(figure, amount_rows):
     output = ""
-    for i in range(0, (amountRows + 1)):
+    for i in range(0, (amount_rows + 1)):
         output += figure
     output += "\n"
 
     return output
 
-def build_hollow_square(figure, amountRows):
-    output = include_border(figure, amountRows)
-    for i in range(amountRows):
-        output += include_hollowness(figure, amountRows)
-    output += include_border(figure, amountRows)
+def hollow_square(figure, amount_rows):
+    output = top_and_bottom(figure, amount_rows)
+    for i in range(amount_rows):
+        output += hollow(figure, amount_rows)
+    output += top_and_bottom(figure, amount_rows)
 
     return output
 
 figure = raw_input("Insert figure")
-amountRows = int(raw_input("Insert amount rows"))
+amount_rows = int(raw_input("Insert amount rows"))
 
-print build_hollow_square(figure, amountRows)
+print hollow_square(figure, amount_rows)
