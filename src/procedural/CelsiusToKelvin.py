@@ -12,7 +12,7 @@ def celsius_to_kelvin(tempCelsius):
    return tempCelsius + 273.15
 
 # Now for the actual program
-userTemperatureInput = raw_input("Temperature in Celsius?")
+userTemperatureInput = input("Temperature in Celsius?")
 if acceptable_input(userTemperatureInput):
    tempCelsius = int(userTemperatureInput)
 
@@ -21,6 +21,6 @@ if acceptable_input(userTemperatureInput):
    if tempKelvinTwoDecimals < 0:
        tempKelvinTwoDecimals = 0
 
-   print "The temperature", tempCelsius, "degrees in celsius converted to degrees in Kelvin: ", tempKelvinTwoDecimals
+   print("The temperature", tempCelsius, "degrees in celsius converted to degrees in Kelvin: ", tempKelvinTwoDecimals)
 else:
-   print "Invalid user input. Only allows numbers."
+   print("Invalid user input. Only allows numbers.")

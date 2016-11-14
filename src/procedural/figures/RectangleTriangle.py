@@ -10,7 +10,7 @@ def build_rect_triangle(figure, amount_rows):
 
     return output
 
-figure = raw_input("Insert figure")
-amount_rows = int(raw_input("Insert amount rows"))
+figure = input("Insert figure")
+amount_rows = int(input("Insert amount rows"))
 
-print build_rect_triangle(figure, amount_rows)
+print(build_rect_triangle(figure, amount_rows))

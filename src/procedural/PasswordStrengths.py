@@ -7,7 +7,7 @@ amt_symbols = 0
 amt_factors = 3
 
 # The actual program
-password_input = raw_input("Insert your password")
+password_input = input("Insert your password")
 for i in password_input:
      if not i.isalpha():
          amt_symbols += 1
@@ -18,8 +18,8 @@ for i in password_input:
 
 strength_lvl = (amt_symbols + amt_uppercased + amt_digits) / amt_factors
 if strength_lvl < 2 or len(password_input) < 5:
-    print "Weak"
+    print("Weak")
 elif strength_lvl < 3:
-    print "Medium"
+    print("Medium")
 else:
-    print "Strong"
+    print("Strong")

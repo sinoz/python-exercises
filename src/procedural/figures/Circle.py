@@ -18,6 +18,6 @@ def circle(figure, diameter):
 
     return output
 
-figure = raw_input("Insert figure")
-diameter = int(raw_input("Insert diameter"))
+figure = input("Insert figure")
+diameter = int(input("Insert diameter"))
 print(circle(figure, diameter))

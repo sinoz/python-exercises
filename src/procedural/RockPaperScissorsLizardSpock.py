@@ -16,17 +16,17 @@ points = [0, 0, 0]
 
 def poll_choices():
    for i in range(0, AMT_PLAYERS):
-       choice = raw_input("Choose Rock/Paper/Scissors/Spock/Lizard:").lower()
+       choice = input("Choose Rock/Paper/Scissors/Spock/Lizard:").lower()
        # TODO: allow user to try again if an invalid choice was given
        if choice != "rock" and choice != "paper" and choice != "scissors" and choice != "spock" and choice != "lizard":
-           print "Invalid input, please choose Rock, Paper, Scissors, Spock or Lizard"
+           print("Invalid input, please choose Rock, Paper, Scissors, Spock or Lizard")
            break
 
        choices.append(choice)
 
 def present_points_per_player():
    for playerId in range(0, len(points)):
-       print "Player", playerId, "has", points[playerId], "points"
+       print("Player", playerId, "has", points[playerId], "points")
 
 def handout_points(player_idx, player_choice, opponent_choice):
    if not ADVANTAGES[player_choice]:

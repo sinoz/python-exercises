@@ -1,4 +1,4 @@
-val = raw_input("Insert string value to have reversed")
+val = input("Insert string value to have reversed")
 output = ""
 
 destination = -1  # -1 as we subtract 1 from the offset
@@ -8,4 +8,4 @@ step = -1 # we're going backwards
 for i in range(offset, destination, step):
     output += val[i]
 
-print output
+print(output)

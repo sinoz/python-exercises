@@ -1,5 +1,5 @@
-textInput = raw_input("Insert text to shift")
-amtToShift = int(raw_input("Insert amount of decimal values to shift characters to"))
+textInput = input("Insert text to shift")
+amtToShift = int(input("Insert amount of decimal values to shift characters to"))
 
 output = ""
 for original in textInput:
@@ -17,4 +17,4 @@ for original in textInput:
     else:
         output += original
 
-print output
+print(output)

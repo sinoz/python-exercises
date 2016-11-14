@@ -12,13 +12,13 @@ def fahrenheit_to_celsius(tempFahrenheit):
    return (tempFahrenheit - 32) / 1.8
 
 # Now for the actual program
-userTemperatureInput = raw_input("Temperature in Fahrenheit?")
+userTemperatureInput = input("Temperature in Fahrenheit?")
 if is_number(userTemperatureInput):
    tempFahrenheit = int(userTemperatureInput)
 
    tempCelsius = fahrenheit_to_celsius(tempFahrenheit)
    tempCelsiusTwoDecimals = round(tempCelsius, 2)
 
-   print "The temperature", tempFahrenheit, "degrees in fahrenheit converted to degrees in celsius: ", tempCelsiusTwoDecimals
+   print("The temperature", tempFahrenheit, "degrees in fahrenheit converted to degrees in celsius: ", tempCelsiusTwoDecimals)
 else:
-   print "Invalid user input. Only allows numbers."
+   print("Invalid user input. Only allows numbers.")

@@ -5,4 +5,4 @@ def absolute_value(value): # TODO: shorten if/else to a ternary?
        return value
 
 value = -20
-print absolute_value(value)
+print(absolute_value(value))
