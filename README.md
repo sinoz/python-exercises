@@ -1,6 +1,7 @@
 # Python Programming Exercises
 This is a collection of my personal college programming exercises for Python. The collection consists of the following completed exercises:
 
+## Procedural Programming Exercises (Freshman Q1)
 - Absolute Value
   * Calculates the absolute value of a given integer value.
 - Celsius To Kelvin
@@ -27,3 +28,8 @@ This is a collection of my personal college programming exercises for Python. Th
   * Draws or prints an isosceles triangle.
 - Circle
   * Draws or prints a circle using the Pythagoras formula.
+  
+## Data Structures & Classes Exercises (Freshman Q2)
+- TODO
+- TODO
+- TODO
