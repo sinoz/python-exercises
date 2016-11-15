@@ -16,9 +16,11 @@ entry_road, entry_rivers, bridges = build_scene(size, offset)
 
 #faces to the right
 boat_texture = pygame.image.load("Content/tanker.png").convert_alpha()
+myBoat = Boat(entry_rivers.Value.Position, False, boat_texture)
 
 #faces to the right
 car_texture = pygame.image.load("Content/car.png").convert_alpha()
+myCar = Car(entry_road.Value, False, car_texture)
 
 def Main():
   start = time.time()
@@ -38,8 +40,8 @@ def Main():
       _board.Value.Draw(screen, True)
       _board = _board.Tail
 
-    
-
+    myBoat.draw(screen)
+    myCar.draw(screen)
 
 
     pygame.display.flip()
