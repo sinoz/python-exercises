@@ -20,10 +20,6 @@ boat_texture = pygame.image.load("Content/tanker.png").convert_alpha()
 #faces to the right
 car_texture = pygame.image.load("Content/car.png").convert_alpha()
 
-
-
-
-
 def Main():
   start = time.time()
   while True:    
