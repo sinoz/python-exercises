@@ -4,10 +4,11 @@ from Node import *
 from Common import *
 
 class Boat:
-    def __init__(self, position, canRemove, texture):
-        self.position = position
+    def __init__(self, curTile, canRemove, texture, offset):
+        self.curTile = curTile
         self.canRemove = canRemove
         self.texture = texture
+        self.offset = offset
 
     def update(self):
         # TODO
@@ -15,11 +16,7 @@ class Boat:
         return None
 
     def draw(self, screen):
-        _width = int(30 / 3)
+        _width = int(self.offset / 3)
         screen.blit(pygame.transform.scale(self.texture, (_width, _width)),
-                    (_width + self.position.X * 30,
-                     _width + self.position.Y * 30))
-
-#BOAT CODE HERE
-
-#NOTE: TO DRAW USE THE CODE AS IN ASSIGNMENT 1
+                    (_width + self.curTile.Position.X * self.offset,
+                     _width + self.curTile.Position.Y * self.offset))
