@@ -30,6 +30,6 @@ This is a collection of my personal college programming exercises for Python. Th
   * Draws or prints a circle using the Pythagoras formula.
   
 ## Data Structures & Classes Exercises (Freshman Q2)
-- TODO
+- A graphical application where car sprites randomly move across a Node-based grid and are removed once landed on a parking tile.
 - TODO
 - TODO
