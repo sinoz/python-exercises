@@ -2,6 +2,7 @@
 from threading import Thread
 import os, pygame
 import time
+from random import randrange
 from Tile import *
 from Node import *
 
@@ -15,21 +16,39 @@ board_size = 10
 car_texture = pygame.image.load("Content\car.png").convert()
 entry_tile = build_square_matrix(board_size, offset)
 
-def Update(cars):
-  #TODO: add the logic of your cars here
-  #HINT For filtering reasons we return a list (of cars?)
-  return cars
+def Update(carList):
+  for car in carList:
+    n = randrange(4)
+
+    direction = None
+    if n == 0:
+      direction = car.curTile.Up
+    elif n == 1:
+      direction = car.curTile.Down
+    elif n == 2:
+      direction = car.curTile.Right
+    elif n == 3:
+      direction = car.curTile.Left
+
+    if not direction == None:
+      if direction.Traverseable:
+        car.curTile = direction
+
+    if car.curTile.Park:
+      carList.remove(car)
+  return carList
 
 def Draw(cars):
   for car in cars:
     _width = int(offset / 3)
     screen.blit(pygame.transform.scale(car_texture, (_width, _width)),
-                     (_width + car.position.X * offset,
-                      _width + car.position.Y * offset))
+                     (_width + car.curTile.Position.X * offset,
+                      _width + car.curTile.Position.Y * offset))
 
 def Main():
   start = time.time()
-  cars = [ Car(Point(0, 0)), Car(Point(2, 2)) ]
+  cars = [ Car(entry_tile) ]
+  secondCounter = 0
   while True:
     pygame.event.wait()
     screen.fill(green)
@@ -38,9 +57,14 @@ def Main():
     entry_tile.Draw(screen)
 
     cars = Update(cars)
+    if secondCounter > 5: #TODO: compute using `start` instead?
+      cars.append(Car(entry_tile))
+      secondCounter = 0
     Draw(cars)
 
     pygame.display.flip()
     time.sleep(1)
+
+    secondCounter += 1
     
 Main()

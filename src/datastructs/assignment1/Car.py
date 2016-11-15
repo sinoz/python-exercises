@@ -2,5 +2,5 @@
 from Node import *
 
 class Car:
-    def __init__(self, pos):
-        self.position = pos
+    def __init__(self, curTile):
+        self.curTile = curTile
