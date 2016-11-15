@@ -18,6 +18,7 @@ entry_tile = build_square_matrix(board_size, offset)
 
 def Update(carList):
   for car in carList:
+    # 4 directions, randomly pick one for the next frame
     n = randrange(4)
 
     direction = None
@@ -34,6 +35,7 @@ def Update(carList):
       if direction.Traverseable:
         car.curTile = direction
 
+    # Cars are removed once parked
     if car.curTile.Park:
       carList.remove(car)
   return carList
@@ -48,16 +50,17 @@ def Draw(cars):
 def Main():
   start = time.time()
   cars = [ Car(entry_tile) ]
-  secondCounter = 0
+  secondCounter = 0 # TODO: temporary until `start` is used to compute time elapsed
   while True:
-    pygame.event.wait()
+    pygame.event.wait() # TODO: find an alternative to per-frame updating
     screen.fill(green)
 
     entry_tile.Reset()
     entry_tile.Draw(screen)
 
     cars = Update(cars)
-    if secondCounter > 5: #TODO: compute using `start` instead?
+    # New cars are added every 5 seconds
+    if secondCounter > 5: # TODO: compute using `start` instead?
       cars.append(Car(entry_tile))
       secondCounter = 0
     Draw(cars)
