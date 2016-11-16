@@ -6,7 +6,7 @@ from Tile import *
 from Node import *
 from Boat import *
 pygame.init()
-size = width, height = 600, 600
+size = width, height = 768, 503
 white = 255, 255, 255
 green = 50, 255, 100
 screen = pygame.display.set_mode(size)
@@ -24,6 +24,7 @@ cars = [ Car(entry_road.Value, False, car_texture, offset) ]
 
 def Main():
   start = time.time()
+  frameCounter = 0
   while True:    
     pygame.event.wait()
     screen.fill(green)
@@ -41,13 +42,26 @@ def Main():
       _board = _board.Tail
 
     for boat in boats:
-      boat.update()
-      boat.draw(screen)
+        if not boat.canRemove:
+            boat.update()
+            boat.draw(screen)
 
     for car in cars:
-      car.update()
-      car.draw(screen)
+        if not car.canRemove:
+            car.update()
+            car.draw(screen)
 
+    if frameCounter == 5:
+        selected = select_one_random(entry_rivers)
+        if selected.River and not selected.Bridge:
+            boats.append(Boat(selected, False, boat_texture, offset))
+    elif frameCounter == 10:
+        selected = select_one_random(entry_road)
+        if selected.Traverseable and not selected.River:
+            cars.append(Car(select_one_random(entry_road), False, car_texture, offset))
+        frameCounter = 0
+
+    frameCounter += 1
     pygame.display.flip()
     time.sleep(0.2)
     
