@@ -5,6 +5,7 @@ import time
 from Tile import *
 from Node import *
 from Boat import *
+from Helper import *
 pygame.init()
 size = width, height = 600, 600
 white = 255, 255, 255
