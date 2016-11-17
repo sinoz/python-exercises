@@ -14,6 +14,7 @@ class Boat:
         direction = randrange(4)
 
         nextTile = None
+
         if direction == 0:
             nextTile = self.curTile.Up
         elif direction == 1:
@@ -27,6 +28,7 @@ class Boat:
             if nextTile.Harbor:
                 self.canRemove = True
             elif nextTile.River and not nextTile.Harbor:
+                self.texture = set_orientation(self.curTile, nextTile, self.texture)
                 self.curTile = nextTile
 
         return None

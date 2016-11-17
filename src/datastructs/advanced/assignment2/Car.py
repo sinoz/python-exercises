@@ -27,7 +27,9 @@ class Car:
             if nextTile.Park:
                 self.canRemove = True
             elif nextTile.Traverseable and not nextTile.River and not nextTile.Harbor:
+                self.texture = set_orientation(self.curTile, nextTile, self.texture)
                 self.curTile = nextTile
+
         return None
 
     def draw(self, screen):
