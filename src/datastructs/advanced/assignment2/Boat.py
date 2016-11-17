@@ -24,10 +24,10 @@ class Boat:
             nextTile = self.curTile.Right
 
         if nextTile is not None:
-            if nextTile.River and not nextTile.Harbor:
-                self.curTile = nextTile
-            elif nextTile.Harbor:
+            if nextTile.Harbor:
                 self.canRemove = True
+            elif nextTile.River and not nextTile.Harbor:
+                self.curTile = nextTile
 
         return None
 

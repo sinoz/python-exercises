@@ -12,14 +12,22 @@ class Car:
 
     def update(self):
         direction = randrange(4)
+
+        nextTile = None
         if direction == 0:
-            None
+            nextTile = self.curTile.Up
         elif direction == 1:
-            None
+            nextTile = self.curTile.Down
         elif direction == 2:
-            None
+            nextTile = self.curTile.Left
         elif direction == 3:
-            None
+            nextTile = self.curTile.Right
+
+        if nextTile is not None:
+            if nextTile.Park:
+                self.canRemove = True
+            elif nextTile.Traverseable and not nextTile.River and not nextTile.Harbor:
+                self.curTile = nextTile
         return None
 
     def draw(self, screen):
