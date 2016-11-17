@@ -1,5 +1,5 @@
 ﻿import pygame
-import random
+from random import randrange
 from Node import *
 from Common import *
 
@@ -11,7 +11,15 @@ class Car:
         self.offset = offset
 
     def update(self):
-        # TODO
+        direction = randrange(4)
+        if direction == 0:
+            None
+        elif direction == 1:
+            None
+        elif direction == 2:
+            None
+        elif direction == 3:
+            None
         return None
 
     def draw(self, screen):

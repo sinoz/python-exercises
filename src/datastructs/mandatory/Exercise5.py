@@ -26,8 +26,8 @@ WinStrategies = {
 }
 
 def play():
-    p1Choice = randrange(2)
-    p2Choice = randrange(2)
+    p1Choice = randrange(3)
+    p2Choice = randrange(3)
     if p2Choice == WinStrategies[p1Choice]:
         p2.score += 1
     elif p1Choice == WinStrategies[p2Choice]:
