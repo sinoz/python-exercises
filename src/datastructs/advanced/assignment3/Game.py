@@ -23,15 +23,12 @@ boats = [ Boat(entry_rivers.Value, False, boat_texture, offset) ]
 car_texture = pygame.image.load("Content/car.png").convert_alpha()
 cars = [ Car(entry_road.Value, False, car_texture, offset) ]
 
-def UpdateBoats(boat):
-    if not boat.canRemove:
-        boat.update()
-        boat.draw(screen)
+def isRemovable(entity):
+    return not entity.canRemove
 
-def UpdateCars(car):
-    if not car.canRemove:
-        car.update()
-        car.draw(screen)
+def updateAndDraw(entity):
+    entity.update()
+    entity.draw(screen)
 
 def Main():
   start = time.time()
@@ -52,8 +49,11 @@ def Main():
       _board.Value.Draw(screen, True)
       _board = _board.Tail
 
-    iterate(boats, lambda n: UpdateBoats(n))
-    iterate(cars, lambda n: UpdateCars(n))
+    filteredBoats = filter(isRemovable, boats)
+    filteredCars = filter(isRemovable, cars)
+
+    iterate(filteredCars, updateAndDraw)
+    iterate(filteredBoats, updateAndDraw)
 
     if frameCounter == 5:
         selected = select_one_random(entry_rivers)

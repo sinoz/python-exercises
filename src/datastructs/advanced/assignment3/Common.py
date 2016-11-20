@@ -1,6 +1,5 @@
 ﻿import os, pygame
 
-
 #USE THIS FUNCTION (IF NECESSARY) TO ROTATE A TEXTURE. NOTE. THIS FUNCTION IS IMMUTABLE. IT RETURNS ALWAYS A NEW TEXTURE
 def set_orientation(prev_p, new_p, texture):
   if prev_p != None and new_p != None:
