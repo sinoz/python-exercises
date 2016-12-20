@@ -34,7 +34,7 @@ class Node:
     def filter(self, f):
         xs = self.tail.filter(f)
         if f(self.value):
-            Node(self.value, xs)
+            return self.fold(self, lambda x, y: Node(self.value, xs))
         else:
             return xs
 
@@ -42,4 +42,4 @@ class Node:
         return f(z, self.tail.fold(z, f))
 
 l = Node(5, Node(9, Node(-1, Empty())))
-print(l.Sum())
+print(l.filter(lambda x: x % 3 == 0))
